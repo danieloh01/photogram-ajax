@@ -1,12 +1,16 @@
-var newFollowButton = $("<%= j(render("follow_requests/follow_request", { :recipient => @follow_request.recipient })) %>");
+<!--var newFollowButton = $("<%#= j(render("follow_requests/follow_request", { :recipient => @follow_request.recipient })) %>");
 
-$("#follow_button_for_<%= @follow_request.recipient.id %>").fadeOut(300, function() {
+$("#follow_button_for_<%#= @follow_request.recipient.id %>").fadeOut(300, function() {
   $(this).replaceWith(newFollowButton).fadeIn(300);
 });
 
 
 
-var newFollowButton = $("<%= j(render("follow_requests/follow_request", { :recipient => @follow_request.recipient, :follow_request => @follow_request })) %>");
+var newFollowButton = $("<%#= j(render("follow_requests/follow_request", { :recipient => @follow_request.recipient, :follow_request => @follow_request })) %>");
 
-<!--// Use a unique id on the element that wraps the follow button, e.g. "follow_button_for_#{recipient.id}".-->
-$("#follow_button_for_<%= @follow_request.recipient.id %>").replaceWith(newFollowButton);
+
+$("#follow_button_for_<%#= @follow_request.recipient.id %>").replaceWith(newFollowButton);
+-->
+
+var newUnfollowButton = $("<%= j(render("follow_requests/follow_unfollow", recipient: @follow_request.recipient, sender: current_user)) %>");
+$("#follow_button_for_<%= @follow_request.recipient.id %>").replaceWith(newUnfollowButton);

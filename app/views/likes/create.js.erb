@@ -1,0 +1,16 @@
+<!--var newFollowButton = $("<%#= j(render("follow_requests/follow_request", { :recipient => @follow_request.recipient, :follow_request => @follow_request })) %>");
+
+$("#follow_button_for_<%#= @follow_request.recipient.id %>").replaceWith(newFollowButton);
+-->
+
+
+
+<!--var newLike = $("<%#= j(render("likes/like", { :recipient => @like.recipient, :like => @like })) %>");
+
+("#like_button_for<%#= @like.recipient.id %>").replaceWith(newLike);
+-->
+
+$("#photo_<%= @like.photo.id %>_like_count").html("<%= @like.photo.likes.count %>");
+
+$("#like_button_<%= @like.photo.id %>").hide();
+$("#unlike_button_<%= @like.photo.id %>").show();

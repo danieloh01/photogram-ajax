@@ -1,0 +1,4 @@
+$("#photo_<%= @like.photo.id %>_like_count").html("<%= @like.photo.likes.count %>");
+
+$("#unlike_button_<%= @like.photo.id %>").hide();
+$("#like_button_<%= @like.photo.id %>").show();
